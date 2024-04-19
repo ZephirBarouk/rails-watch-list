@@ -5,6 +5,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmarks = Bookmark.where(list: @list)
+    @movies = Movie.all
   end
 
   def new
@@ -16,6 +18,7 @@ class ListsController < ApplicationController
     @list.save
     redirect_to lists_path
   end
+
 
   private
 
