@@ -1,0 +1,16 @@
+<% @bookmarks.each do |bookmark| %>
+  <div class="card-product">
+    <img src="<%= bookmark.movie.poster_url %>" alt="Description de l'image">
+    <div class="card-product-infos">
+      <h2><%= bookmark.movie.title %></h2>
+      <p><%= bookmark.movie.overview %></p>
+      <%= bookmark.movie.rating %>
+      <%= bookmark.comment %>
+    </div>
+  </div>
+  <%= link_to "Delete",
+    bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %><br>
+<% end %>
+<%= link_to "Add a movie", new_bookmark_path %><br>
