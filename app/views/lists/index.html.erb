@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Liste de Catégories</h1>
+ <%= cl_image_tag"btkz2hz5kf0wtqbtf24b", alt: "San Francisco", width: 300, height: 200, crop: :fill%>
   <% @lists.each do |list| %>
     <li> <%= link_to list.name, list%> </li><br>
   <% end %>
